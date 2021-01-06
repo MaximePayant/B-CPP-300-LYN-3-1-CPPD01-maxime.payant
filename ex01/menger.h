@@ -12,6 +12,6 @@
 #include <math.h>
 #include <stdio.h>
 
-void menger(int size, int level, int xOffset, int yOffset);
+void menger(int size, int level, int xOffset[2], int yOffset[2]);
 
 #endif // MENGER_H

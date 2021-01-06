@@ -25,9 +25,9 @@ bool checkError(int ac, char **av)
     if (ac != 3)
         return (true);
     if (!isNumber(av[1], false) || !isNumber(av[2], true))
-        return (printf("LOL\n"), true);
+        return (true);
     if (atoi(av[1]) <= 0 || (lol > 0 && lol < 1))
-        return (printf("LOUL\n"), true);
+        return (true);
     return (false);
 }
 
@@ -35,6 +35,6 @@ int main(int ac, char **av)
 {
     if (checkError(ac, av))
         return (84);
-    menger(atoi(av[1]), atoi(av[2]), 0, 0);
+    menger(atoi(av[1]), atoi(av[2]), (int[2]){0, 0}, (int[2]){0, 0});
     return (0);
 }

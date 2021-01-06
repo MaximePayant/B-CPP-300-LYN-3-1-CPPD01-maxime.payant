@@ -8,7 +8,7 @@
 ## VARIABLES
 ## --------------------------------------------->
 EXEC :=	z
-FLAG :=	-Wall -Wextra -pedantic -g3
+FLAG :=	-Wall -Wextra -pedantic -g3 -std=gnu11
 CC :=	gcc
 EXT :=	c
 ## --------------------------------------------->

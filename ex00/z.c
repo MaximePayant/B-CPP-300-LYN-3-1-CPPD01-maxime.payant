@@ -1,5 +1,6 @@
 /*
 ** C++ Seminar Day01, 2020
+** Ex00 z
 ** z.c
 */
 

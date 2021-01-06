@@ -12,7 +12,7 @@ void make_bmp_header(bmp_header_t *header, size_t size)
     header->size = (size * size * 4) + sizeof(bmp_info_header_t) + sizeof(bmp_header_t);
     header->_app1 = 0;
     header->_app2 = 0;
-    header->offset = 0;
+    header->offset = sizeof(bmp_info_header_t) + sizeof(bmp_header_t);
 }
 
 void make_bmp_info_header(bmp_info_header_t *header, size_t size)

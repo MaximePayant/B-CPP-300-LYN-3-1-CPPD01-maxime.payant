@@ -1,10 +1,13 @@
 /*
-** C++ Seminar Day01, 2020
-** Ex00 z
+** EPITECH PROJECT, 2021
+** CPP_D01
+** File description:
 ** z.c
 */
 
-int main(int ac, char **av)
+#include <unistd.h>
+
+int main(void)
 {
     write(1, "z\n", 2);
     return (0);

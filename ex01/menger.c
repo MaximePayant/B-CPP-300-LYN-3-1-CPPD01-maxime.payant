@@ -1,6 +1,7 @@
 /*
-** C++ Seminar Day01, 2020
-** Ex01 menger
+** EPITECH PROJECT, 2021
+** CPP_D01
+** File description:
 ** menger.c
 */
 
@@ -17,5 +18,6 @@ void menger(int size, int level, int xOffset[2], int yOffset[2])
     printf("%03i\n", size / 3 + yOffset[0] + yOffset[1]);
     for (int x = 0; x < size; x += size / 3)
         for (int y = 0; y < size; y += size / 3)
-            menger(size / 3, level - 1, (int[2]){x, xOffset[0]}, (int[2]){y, yOffset[0]});
+            menger(size / 3, level - 1
+            , (int[2]){x, xOffset[0]}, (int[2]){y, yOffset[0]});
 }

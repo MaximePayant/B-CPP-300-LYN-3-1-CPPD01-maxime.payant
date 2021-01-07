@@ -1,6 +1,7 @@
 /*
-** C++ Seminar Day01, 2020
-** Ex02 bitmap
+** EPITECH PROJECT, 2021
+** CPP_D01
+** File description:
 ** bitmap_header.c
 */
 

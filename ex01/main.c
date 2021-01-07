@@ -1,12 +1,13 @@
 /*
-** C++ Seminar Day01, 2020
-** Ex01 menger
+** EPITECH PROJECT, 2021
+** CPP_D01
+** File description:
 ** main.c
 */
 
 #include "menger.h"
 
-bool isNumber(char *str, bool canIsNeg)
+bool is_number(char *str, bool canIsNeg)
 {
     int offset = 0;
 
@@ -18,22 +19,23 @@ bool isNumber(char *str, bool canIsNeg)
     return (true);
 }
 
-bool checkError(int ac, char **av)
+bool check_error(int ac, char **av)
 {
-    float lol = atoi(av[1]) / pow(3, atoi(av[2]));
+    float div;
 
     if (ac != 3)
         return (true);
-    if (!isNumber(av[1], false) || !isNumber(av[2], true))
+    div = atoi(av[1]) / pow(3, atoi(av[2]));
+    if (!is_number(av[1], false) || !is_number(av[2], true))
         return (true);
-    if (atoi(av[1]) <= 0 || (lol > 0 && lol < 1))
+    if (atoi(av[1]) <= 0 || (div > 0 && div < 1))
         return (true);
     return (false);
 }
 
 int main(int ac, char **av)
 {
-    if (checkError(ac, av))
+    if (check_error(ac, av))
         return (84);
     menger(atoi(av[1]), atoi(av[2]), (int[2]){0, 0}, (int[2]){0, 0});
     return (0);

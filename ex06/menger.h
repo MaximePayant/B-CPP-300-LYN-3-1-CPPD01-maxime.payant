@@ -1,6 +1,7 @@
 /*
-** C++ Seminar Day01, 2020
-** Ex01 menger
+** EPITECH PROJECT, 2021
+** CPP_D01
+** File description:
 ** menger.h
 */
 
@@ -12,6 +13,11 @@
 #include <math.h>
 #include <stdio.h>
 
-void menger(int size, int level, int xOffset[2], int yOffset[2], unsigned **img);
+#define X 0
+#define Y 1
+#define SIZE 0
+#define LEVEL 1
+
+void menger(int param[2], int xOffset[2], int yOffset[2], unsigned **img);
 
 #endif // MENGER_H

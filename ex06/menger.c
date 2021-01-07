@@ -1,25 +1,40 @@
 /*
-** C++ Seminar Day01, 2020
-** Ex01 menger
+** EPITECH PROJECT, 2021
+** CPP_D01
+** File description:
 ** menger.c
 */
 
 #include "drawing.h"
 #include "menger.h"
 
-void menger(int size, int level, int xOffset[2], int yOffset[2], unsigned **img)
+static uint32_t take_color(int level)
 {
-    point_t point = {size / 3 + xOffset[0] + xOffset[1], size / 3 + yOffset[0] + yOffset[1]};
+    uint32_t color;
+    unsigned char *byts = (unsigned char *)&color;
 
-    if (size / 3 <= 0 || level == 0
-        || ((xOffset[0] >= size && xOffset[0] < size * 2)
-        && (yOffset[0] >= size && yOffset[0] < size * 2)))
+    byts[0] = 0;
+    byts[1] = 0xFF / level;
+    byts[2] = 0xFF / level;
+    byts[3] = 0xFF / level;
+    #if __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
+    color = __bswap_32(color);
+    #endif
+    return (color);
+}
+
+void menger(int param[2], int pos[2], int offset[2], unsigned **img)
+{
+    point_t point = {param[SIZE] / 3 + pos[X] + offset[X]
+                    , param[SIZE] / 3 + pos[Y] + offset[Y]};
+
+    if (param[SIZE] / 3 <= 0 || param[LEVEL] == 0
+        || ((pos[X] >= param[SIZE] && pos[X] < param[SIZE] * 2)
+        && (pos[Y] >= param[SIZE] && pos[Y] < param[SIZE] * 2)))
         return;
-    draw_square(img, &point, size / 3, 0x00FF0000);
-    //printf("%03i ", size / 3);
-    //printf("%03i ", size / 3 + xOffset[0] + xOffset[1]);
-    //printf("%03i\n", size / 3 + yOffset[0] + yOffset[1]);
-    for (int x = 0; x < size; x += size / 3)
-        for (int y = 0; y < size; y += size / 3)
-            menger(size / 3, level - 1, (int[2]){x, xOffset[0]}, (int[2]){y, yOffset[0]}, img);
+    draw_square(img, &point, param[SIZE] / 3, take_color(param[LEVEL]));
+    for (int x = 0; x < param[SIZE]; x += param[SIZE] / 3)
+        for (int y = 0; y < param[SIZE]; y += param[SIZE] / 3)
+            menger((int[2]){param[SIZE] / 3, param[LEVEL] - 1}, (int[2]){x, y}
+            , (int[2]){pos[X] + offset[X], pos[Y] + offset[Y]}, img);
 }

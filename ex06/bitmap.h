@@ -1,6 +1,7 @@
 /*
-** C++ Seminar Day01, 2020
-** Ex02 bitmap
+** EPITECH PROJECT, 2021
+** CPP_D01
+** File description:
 ** bitmap.h
 */
 
@@ -11,7 +12,7 @@
 #include <stdint.h>
 #include <string.h>
 
-typedef struct __attribute__(( packed)) bmp_header_s
+typedef struct __attribute__((packed)) bmp_header_s
 {
     uint16_t magic;
     uint32_t size;
@@ -20,7 +21,7 @@ typedef struct __attribute__(( packed)) bmp_header_s
     uint32_t offset;
 } bmp_header_t;
 
-typedef struct __attribute__(( packed)) bmp_info_header_s
+typedef struct __attribute__((packed)) bmp_info_header_s
 {
     uint32_t size;
     uint32_t width;
